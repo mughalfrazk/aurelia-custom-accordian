@@ -1,0 +1,55 @@
+.acc-tab {
+  padding: 0 1.4rem;
+  border-left: 0.2rem solid rgb(35, 144, 148);
+  position: relative;
+  background-color: rgb(232, 235, 243);
+  margin-left: 3rem;
+
+  &.previous, &.next {
+    .acc-body {
+      height: 1rem;
+    }
+  }
+
+  .acc-index {
+    position: absolute;
+    top: 0;
+    left: -1.25rem;
+    height: 2.3rem;
+    width: 2.3rem;
+    border-radius: 50%;
+    background-color: rgb(35, 144, 148);
+    border: 0.3rem solid rgb(35, 144, 148);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  .acc-header {
+    padding: 0.2rem 1rem 0.2rem 0;
+
+    h2 {
+      color: rgb(35, 144, 148);
+    }
+  }
+
+  &.next {
+    border-color: rgb(196, 196, 196);
+
+    .acc-index {
+      background-color: rgb(196, 196, 196);
+      border-color: rgb(196, 196, 196);
+    }
+
+    .acc-header {
+      h2 {
+        color: rgb(196, 196, 196);
+      }
+    }
+  }
+
+  &.border-none {
+    border-color: transparent;
+  }
+}

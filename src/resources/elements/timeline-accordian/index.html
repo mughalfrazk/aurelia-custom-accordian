@@ -1,0 +1,14 @@
+<template>
+  <require from="../../../sass/app.scss"></require>
+
+  <div class="acc-tab ${wrapperClass}">
+    <div class="acc-index">${index}</div>
+    <div class="acc-header">
+      <h2>${heading}</h2>
+    </div>
+    <div class="acc-body">
+      <slot></slot>
+    </div>
+  </div>
+
+</template>

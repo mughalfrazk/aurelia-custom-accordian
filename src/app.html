@@ -1,3 +1,10 @@
 <template>
-  <h1>${message}</h1>
+  <require from="./sass/app.scss"></require>
+
+  <ul class="nav-bar">
+      <li repeat.for="nav of router.navigation" class="${nav.isActive ? 'active' : ''}"><a href.bind="nav.href">${nav.title}</a></li>
+  </ul>
+  <div class="page-content">
+    <router-view></router-view>
+  </div>
 </template>

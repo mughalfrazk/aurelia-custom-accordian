@@ -23,9 +23,19 @@ const cssRules = [
     loader: 'css-loader'
   }
 ];
+const sassRules = [
+  {
+    loader: "sass-loader",
+    options: {
+      sassOptions: {
+        includePaths: ['node_modules']
+      }
+    }
+  }
+];
 
 
-module.exports = ({ production }, { analyze, hmr, port, host }) => ({
+module.exports = ({ production }, {extractCss, analyze, hmr, port, host }) => ({
   resolve: {
     extensions: ['.ts', '.js'],
     modules: [srcDir, 'node_modules'],
@@ -207,6 +217,19 @@ module.exports = ({ production }, { analyze, hmr, port, host }) => ({
         // CSS required in templates cannot be extracted safely
         // because Aurelia would try to require it again in runtime
         use: cssRules
+      },
+      {
+        test: /\.scss$/,
+        use: extractCss ? [{
+          loader: MiniCssExtractPlugin.loader
+        }, ...cssRules, ...sassRules
+        ]: ['style-loader', ...cssRules, ...sassRules],
+        issuer: /\.[tj]s$/i
+      },
+      {
+        test: /\.scss$/,
+        use: [...cssRules, ...sassRules],
+        issuer: /\.html?$/i
       },
       // Skip minimize in production build to avoid complain on unescaped < such as
       // <span>${ c < 5 ? c : 'many' }</span>

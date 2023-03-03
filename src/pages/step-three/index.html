@@ -1,0 +1,21 @@
+<template>
+  <div class="step-two-view">
+    <timeline-accordian
+      repeat.for="step of steps"
+      heading.bind="step.heading"
+      index.bind="step.index"
+      wrapper-class="${step.index > currentStep ? 'next' : step.index < currentStep ? 'previous' : ''}"
+    >
+      <p if.bind="step.index === currentStep">${content}</p>
+    </timeline-accordian>
+  </div>
+
+  <!-- <timeline-accordian heading="Step 01" index="1" wrapper-class="previous">
+  </timeline-accordian>
+  <timeline-accordian heading="Step 02" index="2" wrapper-class="previous">
+  </timeline-accordian>
+  <timeline-accordian heading="Step 03" index="3" wrapper-class="border-none">
+    ${description}
+    ${description}
+  </timeline-accordian> -->
+</template>
