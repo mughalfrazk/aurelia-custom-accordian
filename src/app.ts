@@ -1,4 +1,3 @@
-import { autoinject } from "aurelia-framework";
 import { PLATFORM } from "aurelia-pal";
 import {
   Router,
@@ -12,33 +11,19 @@ export class App {
     config.title = "Aurelia";
     config.map([
       {
-        route: ["", "steo-one"],
-        name: "step-one",
+        route: ["", "home"],
+        name: "home",
         nav: true,
-        moduleId: PLATFORM.moduleName("pages/step-one/index"),
-        title: "Step 01",
+        moduleId: PLATFORM.moduleName("pages/home/index"),
+        title: "Home",
       },
       {
-        route: "step-two",
-        name: "step-two",
-        moduleId: PLATFORM.moduleName("pages/step-two/index"),
+        route: "schedule",
+        name: "schedule",
+        moduleId: PLATFORM.moduleName("pages/schedule/index"),
         nav: true,
-        title: "Step 02",
-      },
-      {
-        route: "step-three",
-        name: "step-three",
-        moduleId: PLATFORM.moduleName("pages/step-three/index"),
-        nav: true,
-        title: "Step 03",
-      },
-      {
-        route: "step-four",
-        name: "step-four",
-        moduleId: PLATFORM.moduleName("pages/step-four/index"),
-        nav: true,
-        title: "Step 04",
-      },
+        title: "Schedule",
+      }
     ]);
   }
 }

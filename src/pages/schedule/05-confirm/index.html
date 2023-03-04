@@ -1,0 +1,17 @@
+<template>
+  <div class="step-one-view">
+    <timeline-accordian
+      repeat.for="step of steps"
+      heading.bind="step.title"
+      index.bind="$index + 1"
+      wrapper-class="${$index + 1 > 5 ? 'next' : $index + 1 < 5 ? 'previous' : ''}"
+    >
+      <div if.bind="step.name === currentView">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <a>Done</a>
+      </div>
+    </timeline-accordian>
+  </div>
+</template>
