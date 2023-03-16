@@ -3,10 +3,10 @@ import {
   Router,
   RouterConfiguration,
 } from "aurelia-router";
-import { Steps } from "./step";
+import { Routes } from "./routes";
 
 export class Schedule {
-  public steps = Steps.steps;
+  public routes = Routes.routes;
   public router: Router;
   configureRouter(config: RouterConfiguration, router: Router) {
     this.router = router;
@@ -16,7 +16,7 @@ export class Schedule {
         route: '',
         redirect: "patient-info"
       },
-      ...this.steps
+      ...this.routes
     ]);
   }
 }

@@ -8,13 +8,8 @@ export class TimelineAccordian {
 
   @bindable heading: string;
   @bindable index: number;
-  @bindable wrapperClass: string;
+  @bindable position: number;
   public contentAvailable: boolean = true
 
   constructor(private element) {}
-
-  attached() {
-    let check = this.element.au.controller.view.slots;
-    console.log(check)
-  }
 }

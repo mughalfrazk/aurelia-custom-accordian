@@ -1,6 +1,7 @@
-import { Steps } from "../step";
+import { Routes } from "../routes";
 
 export class Schedule {
   private currentView = 'schedule';
-  private steps = Steps.steps;
+  private position = 3;
+  private steps = Routes.routes;
 }

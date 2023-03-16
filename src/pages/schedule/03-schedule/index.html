@@ -4,7 +4,7 @@
       repeat.for="step of steps"
       heading.bind="step.title"
       index.bind="$index + 1"
-      wrapper-class="${$index + 1 > 3 ? 'next' : $index + 1 < 3 ? 'previous' : ''}"
+      position.bind="position"
     >
       <div if.bind="step.name === currentView">
         <p>

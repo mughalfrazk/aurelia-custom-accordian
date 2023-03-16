@@ -1,7 +1,7 @@
 <template>
   <require from="../../../sass/app.scss"></require>
 
-  <div class="acc-tab ${wrapperClass}">
+  <div class="acc-tab ${index > position ? 'next' : index < position ? 'previous' : ''}">
     <div class="acc-index">${index}</div>
     <div class="acc-header">
       <h2>${heading}</h2>

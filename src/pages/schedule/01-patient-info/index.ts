@@ -1,6 +1,7 @@
-import { Steps } from "../step";
+import { Routes } from "../routes";
 
 export class PatientInformation {
   private currentView = 'patient-info';
-  private steps = Steps.steps;
+  private position = 1;
+  private steps = Routes.routes;
 }

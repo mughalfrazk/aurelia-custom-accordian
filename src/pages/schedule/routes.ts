@@ -1,7 +1,7 @@
 import { PLATFORM } from "aurelia-pal";
 
-export namespace Steps {
-  export const steps = [
+export namespace Routes {
+  export const routes = [
     {
       route: "patient-info",
       name: "patient-info",
